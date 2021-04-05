@@ -1,4 +1,4 @@
-import {red, green, cyan} from 'kleur';
+import {red, green, cyan, blue} from 'kleur';
 import * as figlet from 'figlet';
 
 import {ConsoleMessage} from '../models/console-messages';
@@ -7,7 +7,13 @@ const newLine = '\n';
 
 export const showTitleAndBanner = (): void => {
   console.log(
-    cyan(figlet.textSync(ConsoleMessage.TITLE, {horizontalLayout: 'full'}))
+    blue(
+      figlet.textSync(ConsoleMessage.TITLE, {
+        horizontalLayout: 'full',
+        verticalLayout: 'default',
+        font: 'Standard',
+      })
+    )
   );
   console.info(cyan(ConsoleMessage.BANNER));
 };

@@ -1,5 +1,5 @@
 export enum ConsoleMessage {
-  TITLE = 'NSP',
+  TITLE = 'Neosperience',
   BANNER = 'A Command Line Interface (CLI) to handle Neosperience Cloud operations',
   ERROR = 'ERROR: ',
   SUCCESS = 'SUCCESS: ',

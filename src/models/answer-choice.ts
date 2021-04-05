@@ -1,6 +1,6 @@
 export interface Answer {
   files: Object;
-  provide: any;
+  answer: string;
 }
 
 export interface Choice {
@@ -15,5 +15,4 @@ export enum CommandChoiceValue {
 export enum CommandOptionChoiceValue {
   SERVICES = 'services',
   CLIENT = 'client',
-  FULLSTACK = 'fullstack',
 }

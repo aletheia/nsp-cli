@@ -4,15 +4,15 @@
   "description": "Neosperience NSP Command Line Interface to handle app scaffolding, testing and monitoring",
   "main": "index.js",
   "bin": {
-    "nsp": "./bin/nsp.js"
+    "nsp": "./bin/nsp"
   },
   "scripts": {
-    "build": "yarn clean && tsc && chmod +x dist/cli.js",
-    "clean": "rm -rf ./lib ./docs",
-    "clean:all": "rm -rf ./lib ./docs ./package-lock.json ./node_modules",
+    "build": "npm run clean && tsc -p . && chmod +x bin/nsp",
+    "clean": "rm -rf ./dist ./docs",
+    "clean:all": "rm -rf ./dist ./docs ./package-lock.json ./node_modules",
     "docs": "typedoc --out docs ./src",
-    "global": "npm i -g && nsp",
-    "prepare": "yarn build",
+    "nsp": "npm i -g && nsp",
+    "prepare": "npm run build",
     "check-types": "tsc --noEmit",
     "check-formatting": "prettier --check '**/*.{js,json,css,md,scss,tsx,ts}'",
     "commit": "commit",
@@ -20,7 +20,7 @@
     "posttest": "npm run lint",
     "fix": "gts fix",
     "lint": "gts lint",
-    "nsp": "ts-node src/cli.ts",
+    "start": "npm run build && npm run nsp",
     "test": "jest",
     "tscov": "tscov --min-coverage 90 --details"
   },
@@ -39,6 +39,7 @@
     "@types/fs-extra": "^9.0.10",
     "@types/inquirer": "^7.3.1",
     "@types/node": "^14.14.37",
+    "@types/yargs": "^15.0.13",
     "gts": "^3.1.0",
     "prettier": "^2.2.1",
     "semantic-release": "^17.4.2",
@@ -53,11 +54,11 @@
     "fs-extra": "^9.1.0",
     "husky": "^6.0.0",
     "inquirer": "^8.0.0",
-    "inversify": "^5.0.5",
     "kleur": "^4.1.4",
     "lint-staged": "^10.5.4",
     "reflect-metadata": "^0.1.13",
-    "tslib": "^2.1.0"
+    "tslib": "^2.1.0",
+    "yargs": "^15.4.1"
   },
   "husky": {
     "hooks": {

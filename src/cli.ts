@@ -1,7 +1,19 @@
-//import {main} from './main';
+import {inject, injectable} from 'inversify';
 
-const {_: parameters} = yargs(process.argv.slice(2)).usage(
-  'Generate .scss.d.ts from CSS module .scss files.\nUsage: $0 <glob pattern> [options]'
-).argv;
+import {ScaffoldFullstack} from './template/scaffold/scaffold.template';
 
-console.log(parameters);
+import {commandQuestion, commandTypeQuestion} from './question';
+import {Answer} from './models/answer-choice';
+
+@injectable()
+export class CLI {
+  constructor(
+    @inject('ScaffoldFullstack') private scaffold: ScaffoldFullstack
+  ) {
+    this.executeCLI();
+  }
+  public async executeCLI(): Promise<any> {
+    const commandAnswer: Answer = await commandQuestion();
+    console.log(commandAnswer);
+  }
+}

@@ -6,7 +6,7 @@ import {
   CommandOptionChoiceValue,
 } from '../models/answer-choice';
 
-export async function commandOption(): Promise<Answer> {
+export async function commandTypeQuestion(): Promise<Answer> {
   const listOfOptions: Choice[] = [
     {
       name: 'Template for services app (serverless, CDK)',

@@ -1,6 +1,6 @@
 {
   "name": "nsp-cli",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Neosperience NSP Command Line Interface to handle app scaffolding, testing and monitoring",
   "main": "index.js",
   "bin": {

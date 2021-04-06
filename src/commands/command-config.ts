@@ -1,8 +1,8 @@
 import {basename} from 'path';
 import {boolean} from 'yargs';
 
-export interface CommandConfigParam {
-  [key: string]: string | boolean | string[];
+export interface ConfigJson {
+  [key: string]: string | boolean | string[] | ConfigJson;
 }
 
 export interface CommandConfig {
@@ -10,7 +10,7 @@ export interface CommandConfig {
   path: string;
   appName: string;
   packageManager: PackageManager;
-  params?: CommandConfigParam;
+  params?: ConfigJson;
 }
 
 export enum PackageManager {

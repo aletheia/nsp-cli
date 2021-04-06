@@ -7,5 +7,6 @@ export enum ConsoleMessage {
   GENERATE = 'GENERATE: ',
   CREATE = 'CREATE: ',
   UPDATE = 'UPDATE: ',
+  DELETE = 'DELETE: ',
   START_GENERATING = 'Start generating all the files...',
 }

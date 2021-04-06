@@ -11,5 +11,5 @@
     "importHelpers": true,
     "removeComments": true
   },
-  "exclude": ["node_mosules", "dist", "test", "template"]
+  "exclude": ["node_modules", "dist", "test", "template"]
 }

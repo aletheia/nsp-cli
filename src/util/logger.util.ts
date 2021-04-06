@@ -1,9 +1,9 @@
-import {red, green, cyan, blue} from 'kleur';
+import {red, green, cyan, blue, yellow} from 'kleur';
 import * as figlet from 'figlet';
 
 import {ConsoleMessage} from '../models/console-messages';
 
-const newLine = '\n';
+const newLine = '';
 
 export const showTitleAndBanner = (): void => {
   console.log(
@@ -27,7 +27,7 @@ export const showSuccess = (message: string): void => {
 };
 
 export const showInfo = (message: string): void => {
-  console.info(cyan(ConsoleMessage.INFO) + message + newLine);
+  console.info(blue(ConsoleMessage.INFO) + message + newLine);
 };
 
 export const showGenerate = (fileName: string): void => {
@@ -38,6 +38,10 @@ export const showCreate = (fileName: string, filePath: string): void => {
   filePath
     ? console.log(green(ConsoleMessage.CREATE) + `${fileName} in ${filePath}`)
     : console.log(green(ConsoleMessage.CREATE) + `${fileName}`);
+};
+
+export const showDelete = (fileOrPath: string): void => {
+  console.info(yellow(ConsoleMessage.DELETE) + fileOrPath + newLine);
 };
 
 export const showUpdate = (fileName: string, filePath: string): void => {

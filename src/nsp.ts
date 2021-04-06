@@ -5,7 +5,7 @@ import {appDirectoryQuestion, appNameQuestion} from './question/app.question';
 import {CommandConfig, PackageManager} from './commands/command-config';
 import {CommandBuilder} from './commands/command-builder';
 
-export async function NSP(): Promise<any> {
+export async function NSP() {
   try {
     showTitleAndBanner();
 
